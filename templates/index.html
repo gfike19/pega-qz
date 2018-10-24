@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+    <body>
+        {{question}}
+        <form method="post">
+            <ul>
+                {% for text, num in answers.items() %}
+                <li><input type="checkbox" name="uAnswer" id="uAnswer" value="{{num}}"/>{{text}}</li>
+            </ul>
+                {% endfor %}
+        </form>
+    </body>
+</html>
