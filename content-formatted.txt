@@ -1,0 +1,585 @@
+Which statement demonstrates a well–written business objective?
+Reduce inaccurate claims to less than 10 percent of all claims
+Passwords must be at least 8 characters
+Requires HR VP approval for sabbatical leave,
+0, a well written business objective indicates a goal and a measure of success towards the goal
+
+which statement demonstrates a well–written requirement?
+system displays "Authorization History and Summary for the last 12 months
+User must be able to select "Add Temporary Member" when "Authorization is Required" notice is displayed
+A user should be able to cancel an order at any time
+Eliminate order processing delays due to incorrect routing of requests,
+3, This statement describes processing needs that must be met for processing work and data in the application
+
+Which statement demonstrates a well written specification?
+user passwords shall be encrypted using AES–256 encryption
+The product catalog should be easy to navigate
+reduce time needed for time–off approvals from three weeks to one
+If the complainant type is 'Provider", then provider information must be populated during the Triage Stage in the basic Research Step,
+3, This statement describes how the system must perform
+
+What is the difference between a requirement and a specification?
+There is no difference between a requirement and a specification
+A requirement provides a blueprint for how the application will meet the goals defined in a specification
+A requirement defines a specific step in a process; a specification defines a complete process
+A requirement describes what the business need is, and specifications describes how the application will meet the business need,
+3, This is the main distinction between requirements and specifications
+
+Alternate stages used to __________ (Choose Two)
+organize process steps that are not part of the normal course of events
+define the expected flow of events in the life cycle of a case
+define the tasks that users accomplish while the case in the stage
+represent an alternative flow of the case life cycle sequenced from beginning to end,
+0, an alternate state is used to model the out of sequence events in the life cycle of a case
+2, as with primary stages alternate stages are used to organize process steps
+
+A business process requirement states that users should be able to modify the shipping address at any time and not interrupt the primary case. Which of the following options is the best way to design for this requirement?
+Add a step in a process
+Add a process in a stage
+Add an optional process to any stage in the case type
+Add a local action to the case type,
+3, Adding a user action to the case type allows end users to choose when they want to modify the address and not take the case off the primary path
+
+Which requirement could be satisfied with a user action?
+Reassign any task that remains open after three days to another user
+Allow a user to transfer a case to another employee at any stage of the case
+Requiring a separate approval process whenever an order exceeds 10, 000 dollars
+An application randomly sends a survey to customers once their case is resolved,
+1, Since the decision to transfer the case is left to user, the case can be implemented as an optional process
+
+What three questions should you ask when creating a correspondence?
+How often should you send the correspondence?
+When does the correspondence need to be sent?
+Which email server should the correspondence use?
+Who is the user that receives the correspondence?
+How will the correspondence be sent?,
+1,3,4, You will determine the case when to send the correspondence,You will determine the medium in which the correspondence will be sent
+
+Which two statements identify why you should automate correspondence?
+Automating correspondence keeps all interested parties informed of the current status of a case.
+Automating correspondence allows to you send timely communication
+Automating correspondence allows for sending consistent information to users
+Automating correspondence allows you to advance a case,
+0,1, By automating when a correspondence should be sent, you can send it to users when they need it, and by defining the correspondence in a case, you can be assured that it is sent for every case
+
+Adding instructions to a step _________
+Instructs an architect how to build the step
+Defines what the step should do
+Describes to an end user what should be done in the step
+Describes the business value of the step,
+2
+
+A step in the case life cycle has a Set status value of Pending–Approval. When is the status of the case automatically updated?
+At the beginning of the step
+Only if the user manually updates the case status
+At the end of the step
+The status of a case cannot be automatically updated,
+0, When the set Status value is defined on step, the status is set when the step is executed
+
+a connector is user to _______________ (Choose three)
+Identify an outcome of a decision
+indicate possible branches of a process
+indicate an automated action performed by the app
+identify the order of events in a process
+indicate an event handled by a user,
+0,1,3
+
+Connectors are used to represent outcomes of an automated decision, by adding more than one connector to a shape, you allow a process to branch as required for case processing, and they are used to indicate the order of events in a process; from start to endbusiness metrics are used to _______________
+define the data types for an app
+manage data instrances for an app
+provide statistics on how work is performed in Pega apps
+describe and measure what the organization's work is,
+3, bottom Organizations use these business metrics to make informed decisions about improving its business performance
+
+The Report Browser allows users to __________ (Choose two)
+create business metrics
+create reports
+delete reports
+create process metrics,
+1,2
+
+Which two tasks do system architects perform on a Pega project? (choose two)
+define app requirements
+develop feature prototypes
+Identify business objectives for an app
+configure UI forms,
+1, 2
+
+On a Pega project, who is typically responsible for designing the app architecture?
+LSA
+business architect
+system architect
+SSA,
+0
+
+An application references a data element found in the Work–class. How is the rule inherited by the app?
+by applying directed inheritance
+by naming PegaRULES as the built–on app
+by adding the ruleset that contains the property to the app
+by applying pattern inheritance,
+0, directed inheritance is the only option that allows an app class to inherit rules defined for the Work–class
+
+Select the two items of information used to uniquely identify a rule:
+the type of rule
+the description of the rule
+the app that uses the rule
+the class of the rule
+the status of the rule,
+0, 3
+
+A company provides two applications to its employees. One application is managed by the Accounting department, and allows employees to submit expense reports for reimbursement. The second application is managed by the IT department, and allows employees to submit support tickets for IT–related issues.Each app requires a data element to track the status of a cases. Select the best strategy for implementing this requirement.
+Create one data element in the framework layer, for both apps to use
+Create a data element for each case type, since they may use different status values
+check the inheritance path to determine if an appropriate data element is already available
+create one data element in the organization layer, for both applications to use,
+3,Verify that no appropriate data element already exists and is usable by the app, before you create one
+
+you check out a rule to update it. While the rule is checkout out, another developer decides to test a case type by creating and processing the case. What happens when the app attempts to use the rule you checked out?
+the app runs the checked–out version of the rule, because that is the most up–to–date version of the rule
+the app ignores the checked–out version and uses the previous version in the app ruleset
+the app returns an error and stops processing the case, because the rule is unavailable for use
+the app cannot run because the rule is unavailable,
+1, second from top checkout out a rule does not prevent an app from running the rule. Checkout out a rule only prevents system architects from updating the rule until you check in the rule
+
+which type of record identifies the app that a user opens when logging in to Designer Studio?
+operator ID
+access group
+app,
+1,middle the access group identifies the privileges extended to a group of users for a specific app
+
+__________ is a template for creating _________ at run time
+top–level case, child cases
+data structure, processes
+case type, cases
+case, case types,
+1, second from bottom case type is a template for creating and processing cases
+
+in a mortgage app, the user creates a loan request, in order for the loan request to be approved, the loan office must receive the results of an appraisal.How would you configure the case types to reflect their relationship?
+Make loan request a parent case type, and appraisal a child case type
+make both loan request and appraisal peer case types
+make appraisal a parent case type, and loan request a child case type
+make mortgage a parent case type. make loan request and appraisal child case types,
+0, a loan request must be created before an appraisal case can be created
+
+in an online shopping app, the primary case type PurchaseOrder has two child case types: Payment and Packaging. In processing PurchaseOrder case PO–11, Payment case Pay–37 and Packaging case Pac–56 are created.Which of the following statements about the processing of PO–11, Pay–37, and Pac–56 is correct?
+PO–11 can be resolved when either of Pay–37 and Pac–56 is resolved
+Both Pay–37 and Pac–56 have to be resolved before PO–11 is resolved
+Pac–56 has to be resolved before Pay–37 is resolved
+PO–11 has to be resolved before either of Pay–37 and Pac–56 be resolved,
+1, child cases before parent
+
+a claim case records the items of loss. The property reference to the description of an item of loss looks like this: .itemOfLoss(1).Description. The property reference .itemOfLoss(1).Description is an example of _________ property?
+value list
+Page
+page group
+page list,
+3, references to page group properties includes a subscript
+
+you want to capture the delivery method for a purchase request. The options are: Standar, premium, or next day. You use the Data Model tab to create the property. How would you define the list with the options?
+Picklist
+Field group (list)
+Text (paragraph)
+Radio button,
+0
+
+a candidate's language skills are captured in a candidate case. What type of property is used to capture the candidate's language skill if the property reference looks like this: Language(Spanish)?
+Text
+value group
+page
+single value,
+1
+
+in which of the following situations would you use a data transform? (Choose two)
+create properties after the case has been created
+copy data between pages
+set default values when creating a case
+execute a flow action,
+1,2, use pyDefault dt to initialize properties when a case is created
+
+what is the purpose of the pyDefault dt?
+to propagate property values from a parent to subcase
+to set internal case properties, never override pyDefault
+to use the superclass feature
+to initialize property values when a case is created,
+3, bottom
+
+in a purchase order app, you have asked to add an order total field that is used on multiple forms in the app. You want to make sure that whenever the input value changes the order total will change in all the forms. Which two of the following reasons would you choose to use a declare expression for the calculating values?
+The system monitors input properties when to update the target property value
+a declare expression calculates a specific value that is used on multiple forms
+to update the calculation, you only update one rule making the app easier to maintain
+a declare expression updates the total value on all the forms when any form containing the field is submitted,
+0, 3
+
+You are configuring a declarative network that contains eleven declare expressions, which are used to calculate interest for a home mortgage. For example, the target value Property Tax Assessment is used as a source value when calculating the Assessed Property Value. The declare expressions use target values from other expressions to calculate their target values. The field displaying the interest rate appears on the approval form. To reduce the number of calculations in order to optimize performance, how would you configure the declare expressions?
+Specify forward chaining in the declare expression that calculates the total interest rate value
+to calculate the total interest rate value, and add all the declare expression target property values
+apply the declare expression in the approval flow action
+Specify backward chaining in the total interest rate declare expression,
+0, The total interest rate property will not be updated until the review form is opened. This approach avoids repeated, unnecessary calculations.
+
+you are designing a travel plan app. A hotel booking step displays a form in which users select a hotel and enter the number of days they are staying at the hotel. The form displays the total cost for the hotel room. The form also includes fields for selecting, at extra cost, options for valet parking. The cost for any selected options are totaled and then added to the total cost for the room to equal the grand total, which is displayed in a field. Which two of the following properties would you use as the target properties?
+price of each option
+total cost for the hotel room
+number of days at the hotel
+total cost of options,
+1, 3, multiplying the daily room cost times the number of days equals the target property –total hotel room cost, the option costs are added together to equal the target property total cost of options
+
+use data propagation to automatically copy values from a case to __________
+subcases only
+subcases and spin–off cases
+any cases
+its parent case and any subcases,
+answer: second from top
+
+when does data propagation occur?
+when the subcase or spin–off case is created
+when a subcase's or a spin–off case's value changes
+when a parent's value changes and a data transform us used to configure the data propagation
+whenever a parent's value changes,
+answer: top the data is only propagated on case creation. Subsequent changes are not propagated
+
+Use __________ to use conditional logic to determine which data should be propagated.
+a decision tree
+the property manager
+a data page
+a data transform,
+answer: bottom
+
+pyWorkpage stores which type of info?
+info about the current operator
+data cached from an outside system
+info about a case
+info about the Pega server,
+answer: second from bottom
+
+an online shopping app collects and displays the user's shipping address. And address contains a street number, sity, state, and zipcode. This info is always presented together n a group whether it is used for an order confirmation or for invoice billing.
+Which UI component is appropriate for displaying the address info?
+portal
+skin
+section
+control,
+answer: second from bottom section groups work info and functionality by context and purpose
+
+you are designing a screen to display employee info such as job title and hire date. The display needs to present the reporting hierarchy among employees as well.
+Which type of repeating layout is appropriate for this purpose?
+column
+tree
+grid
+tree grid,
+answer: bottom
+
+an online shopping app has a work class named PurchaseOrder. The Work class has an embedded page for customer info, and this embedded page is of a data class named Customer. The Customer class contains an embedded page for payment info, this embedded page is part of a data class named Payment.
+you need a reusable section for displaying payment info on an order. Where should you define this section?
+Customer class
+Payment ""
+PurchaseOrder ""
+Data "",
+answer: second from top a section containing property content should be located in the class where the properties are located.
+
+Using Live UI, you must reorder the position of fields on a user form. How you use the tool in order to complete this task?
+In the hierarchy tree, copy the original element and paste it in the new position
+On the user form, copy the original element and paste it in the new position
+on the user form, drag and drop the field in the new position
+in the hierarchy tree, drag and drop the element in the new position,
+answer: bottom You drag and drop UI elements in the hierarchy tree to re–position them.
+
+In which of the following cases would you use a paragraph? (Choose two)
+To display read–only text in rich text format
+to define a piece of text that is used in several screens in the application
+to provide the user with the ability to enter rich text
+to display an image,
+answers: top two
+
+Where can you NOT include a paragraph? 
+Paragraph
+section 
+correspondence
+flow,
+answer: bottom
+
+The design document of an application states that the application must be implemented with UI responsiveness. Which behavior does the design require for the application?
+An application can respond to voice command
+an application can deliver email notification to users in a timely fashion
+the placement of the screen content adjusts to different screen sizes and devices automatically
+different groups of users have access to different content and functions,                                                                                                                 
+answer: second from bottom
+
+A dynamic layout uses an inline format to organize UI elements on the screen. The inline format is configured with two responsive breakpoints; the first one is to change to an inline grid triple format at 1024 pixels and the second one is to change to an inline grid double format at 768 pixels. The UI elements are arranged into various number of rows depending on the screen size and number of elements on the screen. When the screen size is at 800 pixels and there are five elements on the screen, how many elements should be in the last row?
+Two since it is in inline grid triple format
+One since it is in inline grid double format
+five since it is in inline format
+Undetermined –it depends on the sizes of the elements,
+answer: top the layout is inline grid triple format at 800–pixel screen width
+
+The business is witching its application branching to use a warmer color scheme and to include responsive behavior to the user interface. Which two of the following rules must be modified to implement this change?
+section rule
+flow action rule
+skin rule 
+app rule,
+answers: bottom two skin defines app styling including responsive behavior, and app rule references a skin to apply styling
+
+which two of the following are considered property based events in Pega's dynamic UI model?
+a section refreshes
+users move the mouse over a URL link
+Users click button
+total value of a customer order reaches $500
+Users change the arrival date on a hotel reservation to one week later,
+answers: bottom two property value changes/meets a certain criteria
+
+where do you set the Visible When condition to display a layout based on the click of a button?
+on the layout
+on both the button and the layout
+on the button
+on the either the button or the layout,
+answer: top the visible when condition turns the display of the section on and off 
+
+in the even action model of dynamic UI, which of the following statements is correct regarding event processing?
+a control always has one or more action sets
+an action can be performed for only one event per control
+action attached to an event execute in random order
+an event can be configured to perform multiple actions,
+answer: bottom
+
+In an application for applying to jobs, a submit button is in the section rule for uploading a resume. You defined a new button style format with a gray background color and crimson font color. What do you need to do to apply the new style format to the submit button?
+drag the format onto the section or frame
+configure the submit button in the section rule to use the new format
+update the CSS file to specify the style format to use
+Associate the format to the submit button on the components tab of the skin,
+answer: second from top formats are referenced from section rules to apply to UI controls
+
+You have been asked to add to a form a checkbox control named "Auto Insurance Discount". Selecting the checkbox indicates that the user qualifies for the discount. However, in order to qualify, two conditions must be met. First, the user must be older than 25. Second, the user has not received a traffic violation in three years or more. If both conditions are not met and the checkbox is selected, an error appears when the form is submitted. Which one of the following approaches would you use in order to support this requirement? 
+user a single validate rule to verify both of these conditions
+Associate an edit validate rule with the flow action that references the form
+use an edit validate rule that validates both conditions
+use two validate rules, one for each condition,
+answer: top a single validate rule can verify multiple conditions for the same field
+
+a requirement states that you must add a control that shows a list of book titles. The titles change on a daily basis. The book records are maintained on a database. The control must show the most current info. The organization schedules updates to the application on a weekly basis. Which of the following configurations would you use?
+Add a drop down control and source the list using a data page
+add a radio button that identifies each employee with a button
+add a drop down control and use a list of items in the control's property
+add a drop drop control and source the list using the property that identifies the items in the list,
+answer: top A dynamic list uses the most current info that is sourced from a data page
+
+Which situation is best addressed through circumstancing?
+Notify a manager if the "Review Request" assignment exceeds the established deadline of 24 hrs.
+if a loan applicant is married, prompt the applicant to provide the name, DOB, and taxpayer ID for their spouse
+loan applicants must provide their name, address, and occupation. If the customer is already a customer, automatically populate details from the system of record. Otherwise require that the applicant enter this info on this form.
+If a loan applicant resides in Canada, add a legally required disclosure to the confirmation email acknowledging the submission of their loan request,
+answer: bottom Circumstancing allows you to adjust execution of a process step based on case conditions, Altering the content of correspondence based on a specific condition, such as the state of residence for a loan applicant, is common use use case for circumstancing.
+
+Which rule warning do you address by justifying the current design?
+An application uses an activity to add a customer information to a system of record
+a property on a report is not optimized, and may affect report performance
+An application is being prepared for release, and a process is still in draft mode
+An application uses an activity to calculate a promotional discount,
+answer: top 
+
+Writing data to a system of record may require use of an activity, even though activity use triggers a guardrail violation. In this situation, the violation should be justified.
+Which requirement would be best implemented as an alternate stage when defining a case type?
+Travel requests must be review by the submitter's manager. Any travel request exceeding USD $10,000 must also be review by the division VP
+When a customer requests delivery of airplane tickets, the application prompts the user to provide their mailing address
+if a timesheet is rejected it can be corrected and resubmitted
+Upon resolution of an order, a survey should be sent to the purchaser,
+answer: second from bottom alternate stages are those stages that are not a part of the "normal" course of events, but must be available under certain circumstances such as this
+
+Select two statements that best describe the relationship between a case and a child case?
+A case is considered the primary processing unit (parent case) of a business transaction, while a child case is any related case that represents work that must be completed to resolve the parent case
+a case represents all of the steps needed to complete a business transaction. A child case is only used when the step needed to help complete a business transaction involves one or more tasks and one or more actors.
+a case is used when the steps needed to complete a business transaction involves conditions between the steps. A child case is used to indicate one of the steps if the parent case does not involve conditions between the steps.
+a case represents the processes, data, and work parties involved in completing a business transaction. A child case typically focuses on a subset of data relative to a parent case and usually involves different work parties than the parent case.,
+answers: top and bottom A case is considered the primary work item. A child case represents additional work that must be completed to resolve the primary work item. Also, a child case represents work that can be executed outside of the context of the parent case, but resolving the parent case depends on the child case being completed first.
+
+You have a case type for account openings which has a credit check child case. You have configured data propagation on the account case for the credit check subcase. Which of the following statements described the data propagation feature?
+Data is propagated every time the account case is saved to the database
+data is propagated when the credit check case is updated
+data is propagated when the credit check case is created
+data is propagated when the account case is updated,
+answer: second from the bottom
+
+select the statements that best describe the purpose of a data transform? (choose two)
+use data data transforms to define the contents of a clipboard page in either read–only or read–write mode
+use data transforms to set properties values on a given page whether they are initial values or updated values
+use data transforms to map data from a source to a target, and perform any conversions needed to achieve the intended mapping results
+use data transforms to store data obtained from a SQL query on clipboard page, which can then be paginated for presentation in a report,
+answers: middle two
+
+Given: Customer must provide at least one of the following three telephone numbers:
+home
+office
+mobile
+Then: which property mode should be used to collect and identify this phone number by name?
+Single Value
+Page
+page list
+value group,
+answer: bottom use a value group to create a property that can contain an unordered group of single values
+
+An application includes the property reference .Customer.Asset(3).AssetType
+The property type of .Asset(3) is a __________?
+page
+page list
+value list
+page group,
+answer: second from top a page list is used to create a property that can contain an ordered list of embedded pages
+
+To forms for an online shopping process use a declarative network to calculate values. The first form contains fields that display the item total amounts and the order total amount. The second form includes fields that display the taxes and the grand total that will be charged to the user's credit card. Which declare expression configuration would you use so that all values on the second form are calculated only when the user reaches the form?
+Backward chaining for the taxes and grand total
+forward chaining for the item total amounts and total order amount
+forward chaining for the taxes and grand total
+Backward chaining for the item totals and total order amount,
+answer: top the values will be updated only when the second form is opened
+
+which two requirements are examples of an escalation action on a SLA?
+an email is sent to the assignee's manager if the assignment is unresolved at the end of the Deadline interval
+A manager decides to reassign an completed assignment when the deadline interval expires.
+the assignment urgency increases if the assignment is unresolved at the end of the Goal Interval
+a request is rejected if it has not been resolved by the end of the Deadline Interval,
+answers: top and bottom
+
+which three rule types can you reference in a correspondence rule to provide content for the correspondence?
+validate
+data transform
+section
+property
+paragraph,
+answer: bottom three
+
+An insurance claim process includes an assignment in which a manager reviews claims, if the claim is denied an email is automatically sent to the user and the case is resolved.
+How do you configure the process to send this correspondence?
+Add a SendCorrespondence local action to the review assignment.
+Add a Send Email Smart Shape to the deny connector leaving the review assignment
+Add a notification to the assignment
+Add an assignment and a notification to the deny connector leaving the review assignment,
+answer: second from top  The Smart Shape automatically sends email when the case is resolved
+
+An email correspondence contains instructions for filling out a form. The instruction contain images which illustrate how to fill in fields. The instructions are used in various correspondence used by your company. Which is the best way to include the instructions?
+Include contents in a paragraph rule and reference it in a text area control on your correspondence
+Include contents in a paragraph rule and reference it in your correspondence
+Include instructions in a standard correspondence type rule and reference it in your correspondence
+Include contents in a section and reference it in your correspondence,
+answer: second from top Paragraphs present formatted text that can include colors, fonts, styles, and images`
+
+In which situation is the use of activity necessary?
+copy data from one page to another
+Retrieving data from an external system.
+Copying data from a parent case to a child case when the child is created
+Sending a text message when a case is resolved,
+answer: bottom You would use the CorrNew activity in a Utility shape
+
+You are adding a date of birth field to a job application form. You want to make sure that the user enters a data in the past. How would you support this requirement?
+Use a when condition to test whether the date is in the past or in the future.
+Use a calendar control that tests the date.
+Use a validate rule to test the date
+Use a declare expression to test the date,
+answer: second from bottom
+
+A form contains a text field for entering a US postal code. You want to make sure that the user enters five digits in the field. What rule you use to enforce this requirement?
+Specify a validate rule in the property used by the field.
+Use five character min/max settings on the field.
+Specify an edit validate rule in the property used by the text field.
+Use an integer property type in the text field,
+answer: second from bottom An edit validate rule can test the field pattern, in this case for five digits
+
+An online computer equipment vendor maintains an inventory database of more than 1000 items. While shopping, users select items from a list, How do you configure the field so that it displays the items?
+Configure the field so that it displays the items?
+Configure an auto–complete control using a data page as the data source.
+Configure an auto–complete control using a clipboard page as the data source
+configure a drop–down list using a clipboard page as the data source.,
+answer: second from top A data page allows you to source data from the database. The autocomplete allows the user to filter the list of items as they type
+
+An application that processes loan requests must collect info from borrowers to check their credit report. If a borrower is married, the borrower must provide this info for a spouse as well. For each person, the application requires a first name, last name, and taxpayer ID.
+What is the best way to implement this requirement?
+Create two sections: one for the borrower only, and the other for the borrower and their spouse. Use declarative processing to determine which section to display.
+Create the fields for the spouse in a separate layout and use a visible when condition to determine when the fields for the spouse should appear or be hidden.
+Add fields for both the borrower and the spouse to the UI and make both sets of fields required.
+Add an assignment for the borrower's info and an assignment for their spouse's info and use a decision shape to determine when to skip the assignment for the spouse's info,
+answer: second from top Every extra unit of info in a dialogue competes with the relevant units of info and diminishes their relative visibility. Use the visible when feature whenever appropriate so that users are not inundated with info until needed.
+
+Users can access an apartment search application from laptops and mobile phones. Pictures of the apartments, descriptions, and agent info are organized in columns.
+How do you implement the screen to accommodate both laptops and mobile displays?
+Use a column layout
+Use a smart layout
+Use a dynamic layout
+Use a screen layout,
+answer: second from bottom You can configure a dynamic layout to arrange UI elements in different formats at different screen sizes
+
+You are configuring a grid layout so that a row is set in focus when a user right–clicks a row, uses the up key or uses the down key. In addition, when the user clicks a row, it is shown in edit mode.
+How do you configure the grid to support this requirement?
+Use two action sets: one for the right–click action, and one for the up key and down key actions
+use one action set for the click, up key, and down key actions
+use one action set for the click, up key, and down key events
+Use two action sets: one for the right–click event, and one for the up key and down key events,
+answer: bottom you can combine the focus and edit action for the right–click event
+
+An employee medical coverage form contains a check box to indicate whether the employee has a spouse. When a user selects the check box, the form displays a section that includes additional fields for entering info about the spouse.
+How do you configure the form?
+Add a visible when condition to the section containing info about the spouse.
+Set visibility to if not blank in the cell containing the checkbox.
+Add a visible when condition in the cell containing checkbox
+Set visibility to if not blank in the section containing info about the spouse,
+answer: top You use the when condition to test whether the checkbox value is true or false
+
+a step in an activity for creating correspondence calls another activity to send correspondence to all the parties listed on the pyWorkParty page.
+How would  you configure the first activity to achieve the desired behavior?
+Specify pyWorkParty as a step page 
+specify pyWorkParty as the primary page.
+specify pyWorkParty as a parameter
+specify pyWorkParty as a clipboard page,
+answer: top this step page provides data context during the execution of the of this step
+
+You create a form you want to add to your process. In which flow shape would you add your form?
+none
+connector
+assignment
+Utility,
+answer: top you add forms to flow actions, which are defined in connectors
+
+Your organization replaces employee laptops two years from the date the laptop was issued. A manager asks you to create a report that shows, for each employee, the number of weeks until the replacement date. Report columns include Employee ID, Laptop ID, and Issue Date. How would you configure the report definition to provide the requested information.
+Create a Weeks to Replace column. Create a filter using the Issue Date property and a function to calculate the value. 
+Create a Weeks to Replace column, in the Issue Date column use a function to calculate the value
+Create a Weeks Until Replacement and update values in the database on a weekly basis
+Create a Weeks Until Replacement column and use a function in the column to calculate the value,
+answer: bottom A function can be used to calculate the number of of weeks remaining based on the Issue Date and two–year deadline
+
+A report contains columns for case IDs, creation dates, managers, and office locations. How do you configure a report filter condition so that it displays only cases created in the Atlanta office?
+office location equals Atlanta
+Case ID column equals Atlanta
+Office location column does not equal Atlanta
+Case ID column does not equal Atlanta,
+answer: top
+
+a data page has the Refresh If Older Than field set to five minutes. When will the data page reload. 
+five minutes after it was last updated
+depends on when it was accessed
+five minutes after it was created and never again
+five minutes after it was last accessed,
+1, second from the top a data page is refreshed on the first access after it was marked stale.
+
+Consider a purchase request case. In which of the following situations would you use a local data source?
+to store purchase request case data
+to store customer data retrieved from a system of record
+to store options for the priority of a purchase request
+to store purchase request line items,
+2, use a local data source to store reference data
+
+In a purchase app you need to retrieve product details from the product catalog. There is a SOAP connector configured for integration with the product catalog. The connector should be invoked from a(n) __________
+data page
+activity
+flow
+data transform,
+1, data page is used to retrieve or read data from an external system
+
+You want to enable external systems to retrieve the claim history for a given customer from a Pega claims app. What component is required to implement this requirement?
+connector
+data page
+service
+local data source,
+2, a service rule allows you to expose a service. Pega is acting as the service and the external system as the client
+
+Select the statement that best describes the use of the Database Table Class Mapping tool:
+To expose data on an embedded page for reporting by linking properties stored on an embedded page to columns in a dedicated database table
+To import data from an external database into a Data Table for use in an application as reference data
+To map the columns of a database table to properties in a data class, to facilitate access to the contents of the database table
+To map the content of a database table to a data page, for use in an application as reference data,
+2, The Database Table Class Mapping tool provides a wizard that generates all the artifacts needed to interact with reference data in an external database. These artifacts include a data class, a database table instance, and a link between those artifacts.
