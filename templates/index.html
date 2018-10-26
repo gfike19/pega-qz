@@ -1,12 +1,17 @@
 <!DOCTYPE html>
     <body>
-        {{question}}
         <form method="post">
-            <ul>
-                {% for text, num in answers.items() %}
-                <li><input type="checkbox" name="uAnswer" id="uAnswer" value="{{num}}"/>{{text}}</li>
-            </ul>
-                {% endfor %}
+<!-- makes it so the checkboxes are even -->
+            <label>
+                {{q}}
+                <!-- removes bullets beside checkboxes -->
+                <ul style="list-style: none;">
+                    {% for each in a %}
+                    <li>
+                        <input type="checkbox" name="uAnswer" value="{{a.index(each)}}"/> {{each}}</li>
+                        {% endfor %}
+                </ul>
+            </label>
         </form>
     </body>
 </html>
