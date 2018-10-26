@@ -24,7 +24,12 @@ def index():
         a = temp[1]
         return render_template("index.html", q=q, a=a)
     
-    # if request.method == 'POST':
+    if request.method == 'POST':
+        uAnswer = request.form['uAnswer']
+        msg = ""
+
+        if uAnswer == answers[counter[0]]
+        # TODO finish post
 
 
 if __name__ == "__main__":
