@@ -47,7 +47,7 @@ for each in notA:
 
 def getQuestions():
     return questions
-# TODO format answers better
+
 def getAnswers():
     return answers
 

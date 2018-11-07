@@ -1,34 +1,30 @@
 from flask import request, redirect, render_template, session, flash, Flask
-from genContent import *
-import random
+from tools import getShuffled
+from question import Question
 
 app = Flask(__name__)
-app.config['DEBUG'] = True 
-
-answers = getAnswers()
-questions = getQuestions()
-order = []
-
-for num in range(0,len(answers)):
-    order.append(num)
-
-random.shuffle(order)
-counter = 0
-
+app.config['DEBUG'] = True
+shuffled = getShuffled()
+session["allQ"] = shuffled
+session["counter"] = len(shuffled)
 @app.route("/")
 def index():
 
     if request.method == 'GET':
-        temp = questions.items()[counter]
-        q = temp[0]
-        a = temp[1]
-        return render_template("index.html", q=q, a=a)
+        allQ = session["allQ"]
+        counter = session["counter"]
+        question = allQ[counter]
+        q = question.query[0]
+        choices = question.query[:len(q)]
+        counter -= 1
+        session["counter"] = counter
+        return render_template("index.html", q=q, a=choices)
     
-    if request.method == 'POST':
-        uAnswer = request.form['uAnswer']
-        msg = ""
+    # if request.method == 'POST':
+    #     uAnswer = request.form['uAnswer']
+    #     msg = ""
 
-        if uAnswer == answers[counter[0]]
+    #     if uAnswer == answers[counter[0]]
         # TODO finish post
 
 
