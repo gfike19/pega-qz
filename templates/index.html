@@ -3,12 +3,12 @@
         <form method="post">
 <!-- makes it so the checkboxes are even -->
             <label>
-                {{q}}
+                {{query}}
                 <!-- removes bullets beside checkboxes -->
                 <ul style="list-style: none;">
-                    {% for each in a %}
+                    {% for each in choices %}
                     <li>
-                        <input type="checkbox" name="uAnswer" value="{{a.index(each)}}"/> {{each}}</li>
+                        <input type="checkbox" name="uAnswer" value="{{choices.index(each)}}"/> {{each}}</li>
                         {% endfor %}
                 </ul>
             </label>

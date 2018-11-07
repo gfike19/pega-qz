@@ -10,18 +10,20 @@ def getShuffled():
     lst = []
 
     for i in range(0, len(questions) - 1):
-        query = questions[i]
-        ans = answers[i]
-        q = Question(query, ans)
-        e.append(q)
-        lst.append(i)
+        for k,v in questions.items():
+            query = (k,v)
+            answer = answers[i]
+            q = (query, answer)
+            e.append(q)
+            lst.append(i)
 
     shuffled = []
 
-    while len(lst) > 0:
+    while len(lst) - 1 > 0:
         num = secrets.randbelow(len(lst) - 1)
         j = lst.pop(num)
         shuffled.append(e[j])
     
     return shuffled
+
 

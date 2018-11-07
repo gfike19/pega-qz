@@ -4,21 +4,25 @@ from question import Question
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-shuffled = getShuffled()
-session["allQ"] = shuffled
-session["counter"] = len(shuffled)
+
 @app.route("/")
 def index():
-
+    #TODO need set up for initial set up
+    shuffled = getShuffled()
+    session["allQ"] = shuffled
+    session["counter"] = len(shuffled)
     if request.method == 'GET':
         allQ = session["allQ"]
         counter = session["counter"]
         question = allQ[counter]
-        q = question.query[0]
-        choices = question.query[:len(q)]
+        # Question class set up:
+        # query is a tuple with the part being the question itself
+        # the second part is a list with all the choices
+        query = question.query[0]
+        choices = question.query[1]
         counter -= 1
         session["counter"] = counter
-        return render_template("index.html", q=q, a=choices)
+        return render_template("index.html", query=query, choices=choices)
     
     # if request.method == 'POST':
     #     uAnswer = request.form['uAnswer']
