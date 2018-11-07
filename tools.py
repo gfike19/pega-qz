@@ -26,4 +26,14 @@ def getShuffled():
     
     return shuffled
 
+def createQ(text, num):
+     # questions choices answers
+    QCA = text[0]
+    QC = QCA[0]
+    Q = QC[0]
+    C = QC[1]
+    A = QCA[1]
 
+    question = Question(QC, A)
+
+    return question
