@@ -1,5 +1,4 @@
 from genContent import getAnswers, getQuestions
-from question import Question
 import secrets
 
 def getShuffled():
@@ -25,15 +24,3 @@ def getShuffled():
         shuffled.append(e[j])
     
     return shuffled
-
-def createQ(text, num):
-    # questions choices answers
-    # Q = QC[0]
-    # C = QC[1]   
-    QCA = text[0]
-    QC = QCA[0]
-    A = QCA[1]
-
-    question = Question(QC, A)
-
-    return question
