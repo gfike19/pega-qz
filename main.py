@@ -27,7 +27,7 @@ def indexGet():
         query = QC[0]
         choices = QC[1]
 
-        return render_template("index.html", query=query, choices=choices, answerText=answerText)
+        return render_template("index.html", query=query, choices=choices)
 
 @app.route("/", methods=['POST'])
 def indexPost():
@@ -35,15 +35,17 @@ def indexPost():
         uAnswer = request.values.getlist('uAnswer')
 
         QCA = session['QCA']
-        A = QCA[1]
+        # answer is a tuple where [0] is the choices, [1] is the text
+        A = QCA[1][0]
         answer = None
+        missed = []
 
         if uAnswer == A:
-                answer = "Correct!"
+                answer = "ol korrect!"
         else:
-                i = 0
-                # TODO complete getting answer when uAnswer is incorrect
-        return render_template("index.html", answerText=answerText, query=query, choices=choices)
+                answer = QCA[1][1]
+                
+        return render_template("answer.html", answer=answer)
 
 if __name__ == "__main__":
     app.run()
