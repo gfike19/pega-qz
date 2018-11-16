@@ -35,26 +35,14 @@ def indexPost():
         uAnswer = request.values.getlist('uAnswer')
 
         QCA = session['QCA']
+        A = QCA[1]
+        answer = None
 
-        counter = session['counter'] + 1
-        session['counter'] = counter
-        QCA = shuffled[counter]
-        QC = QCA[0]
-        query = QC[0]
-        choices = QC[1]
-        session['QCA'] = QCA
-        answerText = QCA[1]
-        # answerText = ""
-        # if uAnswer == lst:
-        #         answerText = "Correct!"
-        # else:
-        #         answerText = "Incorrect " + " " + answer[len(answer) - 1]
-        
-        # counter = session['counter']
-        # counter += 1
-        # session['counter'] = counter        
-
-        # return render_template("index.html", answerText=answerText)
+        if uAnswer == A:
+                answer = "Correct!"
+        else:
+                i = 0
+                # TODO complete getting answer when uAnswer is incorrect
         return render_template("index.html", answerText=answerText, query=query, choices=choices)
 
 if __name__ == "__main__":
