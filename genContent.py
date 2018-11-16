@@ -45,11 +45,31 @@ for each in notA:
         sz -= 1
     questions[each[0]] = temp
 
+# formats the answers so that the nunbers are in a separate list in a tuple with the text
+formatted = []
+for item in answers:
+    options = []
+    text = ""
+    for char in item:
+        if char.isdigit():
+            options.append(char)
+        else:
+            text += char
+    formatted.append((options, text))
+
+# removes commas from answer text
+finalAnswers = []
+for each in formatted:
+    comsCount = len(each[0])
+    temp2 = each[comsCount:len(each[1])]
+    temp1 = each[0]
+    finalAnswers.append((temp1, temp2))
+
 def getQuestions():
     return questions
 
 def getAnswers():
-    return answers
+    return finalAnswers
 
 # returns type tuple
 # print(type(questions.items()[0]))
