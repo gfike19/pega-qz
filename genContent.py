@@ -61,15 +61,18 @@ for item in answers:
 finalAnswers = []
 for each in formatted:
     comsCount = len(each[0])
-    temp2 = each[comsCount:len(each[1])]
-    temp1 = each[0]
-    finalAnswers.append((temp1, temp2))
+    text = each[1][comsCount + 1:len(each[1])]
+    nums = each[0]
+    finalAnswers.append((nums, text))
 
 def getQuestions():
     return questions
 
 def getAnswers():
     return finalAnswers
+
+answer = getAnswers()
+print(answer)
 
 # returns type tuple
 # print(type(questions.items()[0]))
