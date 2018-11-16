@@ -23,18 +23,39 @@ def set_up():
 @app.route("/", methods=['GET'])
 def indexGet():
         QCA = session['QCA']
-        counter = session['counter']
-        QC = QCA[counter]
+        QC = QCA[0]
         query = QC[0]
         choices = QC[1]
 
-        return render_template("index.html", query=query, choices=choices)
+        return render_template("index.html", query=query, choices=choices, answerText=answerText)
 
 @app.route("/", methods=['POST'])
 def indexPost():
         # how to get multiple inputs from checkboxes
         uAnswer = request.values.getlist('uAnswer')
-        return render_template("test.html", example=uAnswer)
+
+        QCA = session['QCA']
+
+        counter = session['counter'] + 1
+        session['counter'] = counter
+        QCA = shuffled[counter]
+        QC = QCA[0]
+        query = QC[0]
+        choices = QC[1]
+        session['QCA'] = QCA
+        answerText = QCA[1]
+        # answerText = ""
+        # if uAnswer == lst:
+        #         answerText = "Correct!"
+        # else:
+        #         answerText = "Incorrect " + " " + answer[len(answer) - 1]
+        
+        # counter = session['counter']
+        # counter += 1
+        # session['counter'] = counter        
+
+        # return render_template("index.html", answerText=answerText)
+        return render_template("index.html", answerText=answerText, query=query, choices=choices)
 
 if __name__ == "__main__":
     app.run()
