@@ -26,9 +26,8 @@ class Attempt():
 		self.points = points
 		self.currQ = currQ
 	
-	def finish(self, points, currQ):
+	def finish(self, points):
 		self.calcScore()
 		self.setDate()
 		self.points = points
-		self.currQ = currQ
 		self.status = "complete"
