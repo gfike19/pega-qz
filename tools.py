@@ -1,26 +1,12 @@
-from genContent import getAnswers, getQuestions
+from genContent import getQuestions
 import secrets
 
 def getShuffled():
-    answers = getAnswers()
-    questions = getQuestions()
-
-    e = []
+    qs = getQuestions()
+    limit = len(qs)
     lst = []
 
-    for i in range(0, len(questions) - 1):
-        for k,v in questions.items():
-            query = (k,v)
-            answer = answers[i]
-            q = (query, answer)
-            e.append(q)
-            lst.append(i)
-
-    shuffled = []
-
-    while len(lst) - 1 > 0:
-        num = secrets.randbelow(len(lst) - 1)
-        j = lst.pop(num)
-        shuffled.append(e[j])
+    for num in range(0, limit):
+        lst.append(num)
     
-    return shuffled
+    newLst = 

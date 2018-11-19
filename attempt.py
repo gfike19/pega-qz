@@ -9,9 +9,6 @@ class Attempt():
 		self.currQ = currQ
 		self.score = points/total
 	
-	def __init__(self):
-		pass
-	
 	def calcScore(self):
 		self.score = self.points/self.total
 	
