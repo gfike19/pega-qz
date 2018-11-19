@@ -1,5 +1,4 @@
 import datetime
-from app import app
 class Attempt():
 
 	def __init__(self, points, total, currQ):
@@ -9,6 +8,9 @@ class Attempt():
 		self.date = datetime.datetime.now().strftime("%x")
 		self.currQ = currQ
 		self.score = points/total
+	
+	def __init__(self):
+		pass
 	
 	def calcScore(self):
 		self.score = self.points/self.total
