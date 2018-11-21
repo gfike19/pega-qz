@@ -1,5 +1,5 @@
 from flask import request, redirect, render_template, session, flash, Flask
-from tools import getShuffled
+from attempt import Attempt
 from genContent import getAnswers, getQuestions
 import secrets
 
@@ -20,41 +20,34 @@ answers = getAnswers()
 @app.before_first_request
 def set_up():
         try:
-                f = ("currentProgress.txt", "r")
+                f = open("currentProgress.txt", "r")
                 fileList = []
                 for line in f:
                         fileList.append(line)
-                session['fileList'] = fileList
+                a = Attempt(fileList)
+                session['attempt'] = a
                 f.close()
                 
-        except Exception as e:
-                limit = len(questions)
-                lst = []
+        except Exception:
+                num = secrets.randbelow(81)
+                a = Attempt(currQ=num, points=0)
+                session['attempt'] = a
 
-                for num in range(0, limit):
-                        lst.append(num)
+                text = str(a)
+                f = open("currentProgress.txt", "w")
+                f.write(text)
+                f.close()
 
-                num = secrets.randbelow(len(lst) - 1)
-                currQ = lst.pop(num)
-                session['list'] = lst
-                session['currQ'] = currQ
 
 @app.route("/", methods=['GET'])
 def indexGet():
-        currQ = session['currQ']
+        a = session['attempt']
+        currQ = a.currQ
         QCA = questions[currQ]
         QC = QCA[0]
         query = QC[0]
         choices = QC[1]
-        session['QCA'] = QCA
 
-        f = ("currentProgress.txt", "w")
-        f.write(currQ)
-
-        lst = session['list']
-        f.write(lst)
-
-        f.close()
         return render_template("index.html", query=query, choices=choices)
 
 @app.route("/", methods=['POST'])
@@ -62,10 +55,13 @@ def indexPost():
         # how to get multiple inputs from checkboxes
         uAnswer = request.values.getlist('uAnswer')
 
-        QCA = session['QCA']
+        att = session['attempt']
+        currQ = att.currQ
+        answers = getAnswers()
+        ans = answers[currQ]
         # answer is a tuple where [0] is the choices, [1] is the text
-        choices = QCA[1][0]
-        text = QCA[1][1]
+        choices = ans[0]
+        text = ans[1]
         answer = "The correct answers are:"
         missed = []
 

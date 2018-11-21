@@ -72,7 +72,7 @@ def getAnswers():
     return finalAnswers
 
 answer = getAnswers()
-print(answer)
+print(len(answer))
 
 # returns type tuple
 # print(type(questions.items()[0]))
