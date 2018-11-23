@@ -17,65 +17,49 @@ answers = getAnswers()
 # QC = QCA[0]
 # A = QCA[1]
 
-@app.before_first_request
-def set_up():
-        try:
-                f = open("currentProgress.txt", "r")
-                fileList = []
-                for line in f:
-                        fileList.append(line)
-                a = Attempt(fileList)
-                session['attempt'] = a
-                f.close()
-                
-        except Exception:
-                num = secrets.randbelow(81)
-                a = Attempt(currQ=num, points=0)
-                session['attempt'] = a
-
-                text = str(a)
-                f = open("currentProgress.txt", "w")
-                f.write(text)
-                f.close()
-
-
 @app.route("/", methods=['GET'])
 def indexGet():
-        a = session['attempt']
-        currQ = a.currQ
-        QCA = questions[currQ]
-        QC = QCA[0]
-        query = QC[0]
-        choices = QC[1]
+	allQ = session["allQ"]
+	num = secrets.randbelow(81)
+	if len(allQ) == 0:
+		allQ = []
 
-        return render_template("index.html", query=query, choices=choices)
+	if num in allQ:
+		allQ = session["allQ"]
+	
+	allQ.append(num)
+	
+	QC = questions[num]
+	query = QC.get()
+	choices = QC[query]
+
+	session["currQ"] = num
+
+	return render_template("index.html", query=query, choices=choices)
 
 @app.route("/", methods=['POST'])
 def indexPost():
-        # how to get multiple inputs from checkboxes
-        uAnswer = request.values.getlist('uAnswer')
+	# how to get multiple inputs from checkboxes
+	uAnswer = request.values.getlist('uAnswer')
+	currQ = session["currQ"]
+	ans = answers[currQ]
+	# answer is a tuple where [0] is the choices, [1] is the text
+	choices = ans[0]
+	text = ans[1]
+	answer = "The correct answers are:"
+	missed = []
 
-        att = session['attempt']
-        currQ = att.currQ
-        answers = getAnswers()
-        ans = answers[currQ]
-        # answer is a tuple where [0] is the choices, [1] is the text
-        choices = ans[0]
-        text = ans[1]
-        answer = "The correct answers are:"
-        missed = []
+	if uAnswer == choices:
+		answer = "ol korrect!"
+	else:
+		for each in choices:
+				if each not in uAnswer:
+						missed.append(each)
+		for each in missed:
+				answer += "\n"+str(each + 1)
+				answer += text
 
-        if uAnswer == choices:
-                answer = "ol korrect!"
-        else:
-                for each in choices:
-                        if each not in uAnswer:
-                                missed.append(each)
-                for each in missed:
-                        answer += "\n"+str(each + 1)
-                        answer += text
-
-        return render_template("answer.html", answer=answer)
+	return render_template("answer.html", answer=answer)
 
 if __name__ == "__main__":
-        app.run()
+	app.run()
