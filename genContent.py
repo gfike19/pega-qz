@@ -34,7 +34,7 @@ for line in sortd:
             temp.append(each)
     notA.append(temp)
 
-# convert notA into dictionary form, much easier to handle than a list
+# convert notA into dictionary form
 questions = {}
 
 for each in notA:
@@ -44,6 +44,11 @@ for each in notA:
         temp.append(each[sz])
         sz -= 1
     questions[each[0]] = temp
+
+q = []
+
+for each in questions:
+    q.append(each)
 
 # formats the answers so that the nunbers are in a separate list in a tuple with the text
 formatted = []
@@ -66,13 +71,10 @@ for each in formatted:
     finalAnswers.append((nums, text))
 
 def getQuestions():
-    return questions
+    return q
 
 def getAnswers():
     return finalAnswers
-
-answer = getAnswers()
-print(len(answer))
 
 # returns type tuple
 # print(type(questions.items()[0]))
