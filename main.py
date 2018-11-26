@@ -1,5 +1,4 @@
 from flask import request, redirect, render_template, session, flash, Flask
-from attempt import Attempt
 from genContent import getAnswers, getQuestions
 import secrets
 
@@ -19,21 +18,25 @@ answers = getAnswers()
 
 @app.route("/", methods=['GET'])
 def indexGet():
-	allQ = session["allQ"]
-	num = secrets.randbelow(81)
-	if len(allQ) == 0:
-		allQ = []
 
-	if num in allQ:
-		allQ = session["allQ"]
+	try:
+		allQ = list(session["allQ"])
+	except:
+		allQ = []
+		
+	num = secrets.randbelow(81)
+
+	while num in allQ:
+		num = secrets.randbelow(81)
 	
 	allQ.append(num)
 	
 	QC = questions[num]
-	query = QC.get()
-	choices = QC[query]
+	query = QC[0]
+	choices = QC[1]
 
 	session["currQ"] = num
+	session["allQ"] = allQ
 
 	return render_template("index.html", query=query, choices=choices)
 
@@ -48,9 +51,16 @@ def indexPost():
 	text = ans[1]
 	answer = "The correct answers are:"
 	missed = []
+	
+	try:
+		score = session["score"]
+	except:
+		score = 0
 
 	if uAnswer == choices:
 		answer = "ol korrect!"
+		score += 1
+		session["score"] = score
 	else:
 		for each in choices:
 				if each not in uAnswer:

@@ -48,7 +48,7 @@ for each in notA:
 ls = []
 
 for k,v in questions.items():
-    ls.append(k,v)
+    ls.append((k,v))
 
 # formats the answers so that the nunbers are in a separate list in a tuple with the text
 formatted = []
@@ -75,9 +75,6 @@ def getQuestions():
 
 def getAnswers():
     return finalAnswers
-
-test = getQuestions()
-print(test[0])
 
 # returns type tuple
 # print(type(questions.items()[0]))
