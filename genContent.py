@@ -76,5 +76,7 @@ def getQuestions():
 def getAnswers():
     return finalAnswers
 
+print(getAnswers()[0][0], getAnswers()[0][1])
+
 # returns type tuple
 # print(type(questions.items()[0]))

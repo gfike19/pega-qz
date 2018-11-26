@@ -23,6 +23,11 @@ def indexGet():
 		allQ = list(session["allQ"])
 	except:
 		allQ = []
+	
+	try:
+		scoreText = str(session["score"]) + "/81"
+	except:
+		scoreText = ""
 		
 	num = secrets.randbelow(81)
 
@@ -38,7 +43,7 @@ def indexGet():
 	session["currQ"] = num
 	session["allQ"] = allQ
 
-	return render_template("index.html", query=query, choices=choices)
+	return render_template("index.html", query=query, choices=choices, scoreText=scoreText)
 
 @app.route("/", methods=['POST'])
 def indexPost():
@@ -66,10 +71,14 @@ def indexPost():
 				if each not in uAnswer:
 						missed.append(each)
 		for each in missed:
-				answer += "\n"+str(each + 1)
-				answer += text
+				answer += "\n"+str(int(each) + 1)
+		answer += "\n" + text
+		answer += "\nFor " + str(questions[currQ])
 
-	return render_template("answer.html", answer=answer)
+	scoreText = str(score) + "/81"
+	session["score"] = score
+
+	return render_template("answer.html", answer=answer, scoreText=scoreText)
 
 if __name__ == "__main__":
 	app.run()
