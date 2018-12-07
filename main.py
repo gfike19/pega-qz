@@ -54,7 +54,7 @@ def indexPost():
 	# answer is a tuple where [0] is the choices, [1] is the text
 	choices = ans[0]
 	text = ans[1]
-	answer = "The correct answers are:"
+	answer = ["The correct answers are:"]
 	missed = []
 	
 	try:
@@ -63,7 +63,7 @@ def indexPost():
 		score = 0
 
 	if uAnswer == choices:
-		answer = "ol korrect!"
+		answer.append("ol korrect!")
 		score += 1
 		session["score"] = score
 	else:
@@ -71,9 +71,9 @@ def indexPost():
 				if each not in uAnswer:
 						missed.append(each)
 		for each in missed:
-				answer += "\n"+str(int(each) + 1)
-		answer += "\n" + text
-		answer += "\nFor " + str(questions[currQ])
+				answer.append(str(int(each) + 1))
+		answer.append(text)
+		# answer.append("For " + str(questions[currQ]))
 
 	scoreText = str(score) + "/81"
 	session["score"] = score

@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-{{answer}}
+<ul style="list-style: none;"></ul>
+{% for each in answer %}
+    <li>{{each}}</li>
+{% endfor %}
+</ul>
 <br>
 <a href="/"><button>Next</button></a>
 
